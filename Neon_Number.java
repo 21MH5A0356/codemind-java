@@ -1,29 +1,24 @@
 import java.util.Scanner;
-class Main
-{
-    public static boolean neon(int n)
-    {
-        int prod,r,count=0,temp=n;
-        prod=n*n;
-        while(prod>0)
-        {
-            r=prod%10;
-            count=count+r;
-            prod=prod/10;
+class Main{
+    public static boolean neon(int n){
+        int temp=n,sum=0;
+        n=n*n;
+        while(n>0){
+            sum=sum+n%10;
+            n=n/10;
         }
-        if(count==temp)
+        if(temp==sum)
          return true;
-        else
-         return false;
-        
+          else
+          return false;
     }
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
+        int n;
+        n=sc.nextInt();
         if(neon(n))
-         System.out.println("Neon Number");
+          System.out.println("Neon Number");
         else
-         System.out.println("Not Neon Number");
+          System.out.println("Not Neon Number");
     }
 }
