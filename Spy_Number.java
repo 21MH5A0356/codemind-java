@@ -1,38 +1,23 @@
-import java.util.Scanner;
+import java.util.*;
 class Main
 {
-    public static int prod(int n)
+    public static void main(String args[])
     {
-        int prod=1,r;
-        while(n>0)
-        {
-            r=n%10;
-            prod=prod*r;
-            n=n/10;
-        }
-        return prod;
-    }
-    public static int sum(int n)
-    {
-        int sum=0,r;
+        Scanner sc=new Scanner(System.in);
+        int n,sum=0,prod=1,r;
+        n=sc.nextInt();
         while(n>0)
         {
             r=n%10;
             sum=sum+r;
+            prod=prod*r;
             n=n/10;
         }
-        return sum;
-    }
-    public static void main(String args[])
-    {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt(),d1,d2;
-        d1=prod(n);
-        d2=sum(n);
-        if(d1==d2)
+        if(sum==prod)
+        System.out.println("Spy Number");
+        else
+        System.out.println("Not Spy Number");
         
-         System.out.println("Spy Number");
-         else
-           System.out.println("Not Spy Number");
+        
     }
 }
