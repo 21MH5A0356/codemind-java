@@ -1,12 +1,22 @@
-import java.util.Scanner;
-class Main{
-    public static void main(String args[]){
+import java.util.*;
+class Main
+{
+   public static boolean perfectsquare(int n)
+   {
+       for(int i=1;i*i<=n;i++)
+       {
+           if(n%i==0 && n/i==i)
+           return true;
+       }
+       return false;
+   }
+    public static void main(String args[]) 
+    {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        double d=Math.sqrt(n);
-        if(d-(int)d==0)
-            System.out.println("True");
-        else
-            System.out.println("False");
+        if(perfectsquare(n))
+         System.out.println("True");
+         else
+         System.out.println("False");
     }
 }
